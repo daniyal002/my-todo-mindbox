@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/my-todo-mindbox/static/css/main.abb94230.css",
+    "main.js": "/my-todo-mindbox/static/js/main.45241460.js",
+    "index.html": "/my-todo-mindbox/index.html",
+    "main.abb94230.css.map": "/my-todo-mindbox/static/css/main.abb94230.css.map",
+    "main.45241460.js.map": "/my-todo-mindbox/static/js/main.45241460.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abb94230.css",
+    "static/js/main.45241460.js"
+  ]
+}

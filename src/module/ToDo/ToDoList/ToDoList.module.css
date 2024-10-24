@@ -1,6 +1,7 @@
-/* ToDoList.module.css */
-
-.container {
+.todoList {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     background-color: #f9f9f9; /* светлый фон */
     padding: 20px;
     border-radius: 8px;
@@ -8,22 +9,22 @@
     margin: 30px 0;
   }
 
-  .addTask{
+  /* Элемент */
+  .todoList__addTask {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    row-gap: 10px;
   }
 
-  .input {
-    width: 99%;
+  .todoList__input {
+    width: 98%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-bottom: 10px;
     font-size: 16px;
   }
 
-  .button {
+  .todoList__button {
     background-color: #007bff; /* синий цвет */
     color: white;
     border: none;
@@ -33,58 +34,16 @@
     transition: background-color 0.3s;
   }
 
-  .button:hover {
+  .todoList__button:hover {
     background-color: #0056b3; /* темнее при наведении */
   }
 
-  h2 {
-    color: #333; /* темный текст */
-  }
-
-  ul {
-    list-style-type: none; /* убираем маркеры */
-    padding: 0;
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .checkbox {
-    margin-right: 10px;
-  }
-
-  .deleteButton {
-    background-color: #dc3545; /* красный цвет */
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .deleteButton:hover {
-    background-color: #c82333; /* темнее при наведении */
-  }
-
-  .footer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-
-  .tabs {
+  .todoList__tabs {
     display: flex;
     margin-bottom: 20px; /* Отступ между вкладками и списком задач */
   }
 
-  .tabs .tabsNoComplited,.tabsComplited{
+  .todoList__tabsItem {
     flex: 1; /* Занимает равное пространство */
     padding: 10px;
     border: none;
@@ -96,21 +55,28 @@
     position: relative;
   }
 
-  .tabsNoComplited::after,.tabsComplited::after{
+  .todoList__tabsItem::after {
     content: attr(data-parent);
     position: absolute;
     font-size: 12px;
     top: 3px;
     color: #c82323;
   }
-  .tabs button:hover {
+
+  .todoList__tabsItem:hover {
     background-color: #e1e1e1; /* Более темный фон при наведении */
   }
 
-  .tabsNoComplited.active,
-  .tabsComplited.active {
+  .todoList__tabsItem_active {
     background-color: #ffffff; /* Белый фон для активной вкладки */
     color: #007bff; /* Синий цвет текста для активной вкладки */
     font-weight: bold; /* Жирный текст для выделения */
     border-bottom: 2px solid #007bff; /* Подчеркивание для активной вкладки */
+  }
+
+  .todoList__footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }

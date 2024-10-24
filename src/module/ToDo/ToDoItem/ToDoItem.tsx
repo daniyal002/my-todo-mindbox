@@ -17,17 +17,17 @@ const ToDoItem: React.FC<ToDoItemProps> = ({
   deleteTask
 }) => {
   return (
-    <li className={styles.item}>
+    <li className={styles.todoItem}>
       <input
         type="checkbox"
-        className={styles.checkbox}
+        className={styles.todoItem__checkbox}
         checked={completed}
         onChange={() => toggleCompletion(id)}
       />
-      <span className={`${styles.text} ${completed ? styles.completed : ''}`}>
+      <span className={`${styles.todoItem__text} ${completed ? styles.todoItem__text_completed : ''}`}>
         {text}
       </span>
-      <button className={styles.deleteButton} onClick={() => deleteTask(id)}>
+      <button className={styles.todoItem__delete_button} onClick={() => deleteTask(id)}>
         Удалить
       </button>
     </li>

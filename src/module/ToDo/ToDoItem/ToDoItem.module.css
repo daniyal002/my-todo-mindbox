@@ -1,6 +1,5 @@
-/* ToDoItem.module.css */
-
-.item {
+/* Блок */
+.todoItem {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,11 +10,12 @@
     transition: background-color 0.3s;
   }
 
-  .item:hover {
+  .todoItem:hover {
     background-color: #f1f1f1; /* светло-серый фон при наведении */
   }
 
-  .checkbox {
+  /* Элемент */
+  .todoItem__checkbox {
     margin-right: 10px;
     width: 1.3em;
     height: 1.3em;
@@ -29,22 +29,23 @@
     cursor: pointer;
   }
 
-  .checkbox:checked {
+  .todoItem__checkbox:checked {
     background-color: rgb(68, 190, 68);
-}
+  }
 
-  .text {
+  .todoItem__text {
     flex: 1;
     font-size: 16px;
     color: #333; /* темный текст */
   }
 
-  .completed {
+  .todoItem__text_completed {
     text-decoration: line-through;
     color: #999; /* серый текст для завершенных задач */
   }
 
-  .deleteButton {
+  /* Кнопка удаления */
+  .todoItem__delete_button {
     background-color: #dc3545; /* красный цвет */
     color: white;
     border: none;
@@ -54,6 +55,6 @@
     transition: background-color 0.3s;
   }
 
-  .deleteButton:hover {
+  .todoItem__delete_button:hover {
     background-color: #c82333; /* темнее при наведении */
   }

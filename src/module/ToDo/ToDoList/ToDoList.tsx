@@ -14,10 +14,14 @@ const ToDoList = () => {
   const [activeTab, setActiveTab] = useState<'notCompleted' | 'completed'>('notCompleted');
 
   const addTask = () => {
+    if (newTaskText.trim() !== "") {
     setTasks([
       ...tasks,
       { id: tasks.length + 1, text: newTaskText, completed: false },
     ]);
+  }else{
+    alert("Введите сначала текст в поле ввода!")
+  }
     setNewTaskText(""); // Очищаем поле ввода после добавления
   };
 
@@ -33,28 +37,28 @@ const ToDoList = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.addTask}>
-      <input
-        type="text"
-        className={styles.input}
-        value={newTaskText}
-        onChange={(e) => setNewTaskText(e.target.value)}
-        placeholder="Введите задачу"
-      />
-      <button className={styles.button} onClick={addTask}>Добавить задачу</button>
+    <div className={styles.todoList}>
+      <div className={styles.todoList__addTask}>
+        <input
+          type="text"
+          className={styles.todoList__input}
+          value={newTaskText}
+          onChange={(e) => setNewTaskText(e.target.value)}
+          placeholder="Введите задачу"
+        />
+        <button className={styles.todoList__button} onClick={addTask}>Добавить задачу</button>
       </div>
 
-      <div className={styles.tabs}>
+      <div className={styles.todoList__tabs}>
         <button
-          className={`${styles.tabsNoComplited} ${activeTab === 'notCompleted' ? styles.active : ''}`}
+          className={`${styles.todoList__tabsItem} ${activeTab === 'notCompleted' ? styles.todoList__tabsItem_active : ''}`}
           onClick={() => setActiveTab('notCompleted')}
           data-parent={tasks.filter(task => task.completed === false).length}
         >
           Задачи
         </button>
         <button
-          className={`${styles.tabsComplited} ${activeTab === 'completed' ? styles.active : ''}`}
+          className={`${styles.todoList__tabsItem} ${activeTab === 'completed' ? styles.todoList__tabsItem_active : ''}`}
           onClick={() => setActiveTab('completed')}
           data-parent={tasks.filter(task => task.completed === true).length}
 
@@ -63,7 +67,7 @@ const ToDoList = () => {
         </button>
       </div>
 
-      <h2>{activeTab === 'notCompleted' ? 'Задачи' : 'Завершенные задачи'}</h2>
+      <h2>{activeTab === 'notCompleted' ? 'Задачи' : 'Завершенные задачи '}</h2>
       <ul>
         {tasks
           .filter(task => activeTab === 'notCompleted' ? !task.completed : task.completed)
@@ -79,12 +83,10 @@ const ToDoList = () => {
           ))}
       </ul>
 
-      <footer className={styles.footer}>
+      <footer className={styles.todoList__footer}>
         <p>Всего задач: {tasks.length}</p>
         <p>Незавершенных задач: {tasks.filter(task => task.completed  === false).length}</p>
         <p>Завершенных задач: {tasks.filter(task => task.completed  === true).length}</p>
-
-
       </footer>
     </div>
   );

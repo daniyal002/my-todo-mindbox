@@ -1,0 +1,59 @@
+/* ToDoItem.module.css */
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #ffffff; /* белый фон */
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .item:hover {
+    background-color: #f1f1f1; /* светло-серый фон при наведении */
+  }
+
+  .checkbox {
+    margin-right: 10px;
+    width: 1.3em;
+    height: 1.3em;
+    background-color: gray;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .checkbox:checked {
+    background-color: rgb(68, 190, 68);
+}
+
+  .text {
+    flex: 1;
+    font-size: 16px;
+    color: #333; /* темный текст */
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: #999; /* серый текст для завершенных задач */
+  }
+
+  .deleteButton {
+    background-color: #dc3545; /* красный цвет */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .deleteButton:hover {
+    background-color: #c82333; /* темнее при наведении */
+  }
